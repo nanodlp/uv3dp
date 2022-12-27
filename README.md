@@ -22,8 +22,8 @@ Printers known to work with this tool:
 
 ## Installation
 
-* Release package: [https://github.com/ezrec/uv3dp/releases](https://github.com/ezrec/uv3dp/releases)
-* Go install: `go get github.com/ezrec/uv3dp/cmd/uv3dp; ${GOROOT}/bin/uv3dp`
+* Release package: [https://github.com/nanodlp/uv3dp/releases](https://github.com/nanodlp/uv3dp/releases)
+* Go install: `go get github.com/nanodlp/uv3dp/cmd/uv3dp; ${GOROOT}/bin/uv3dp`
 
 ## Command Line Tool (`uv3dp`)
 

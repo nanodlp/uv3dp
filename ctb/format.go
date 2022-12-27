@@ -17,7 +17,7 @@ import (
 	"github.com/go-restruct/restruct"
 	"github.com/spf13/pflag"
 
-	"github.com/ezrec/uv3dp"
+	"github.com/nanodlp/uv3dp"
 )
 
 const (

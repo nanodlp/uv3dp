@@ -13,8 +13,8 @@ import (
 
 	"testing"
 
-	"github.com/ezrec/uv3dp"
 	"github.com/google/go-cmp/cmp"
+	"github.com/nanodlp/uv3dp"
 )
 
 var (

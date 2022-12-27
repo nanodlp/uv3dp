@@ -20,7 +20,7 @@ import (
 	"time"
 	"unicode"
 
-	"github.com/ezrec/uv3dp"
+	"github.com/nanodlp/uv3dp"
 	"github.com/spf13/pflag"
 )
 
@@ -306,7 +306,7 @@ func (sf *Format) Encode(writer uv3dp.Writer, printable uv3dp.Printable) (err er
 
 	config := cwsConfig{
 		Header: cwsHeader{
-			Vendor:        "github.com/ezrec/uv3dp",
+			Vendor:        "github.com/nanodlp/uv3dp",
 			SlicerName:    "uv3dp",
 			SlicerVersion: "v0.0.0",
 			SlicerArch:    "64-bits",

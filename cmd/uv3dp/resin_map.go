@@ -13,7 +13,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/ezrec/uv3dp"
+	"github.com/nanodlp/uv3dp"
 )
 
 // Resin stores information about resin properties

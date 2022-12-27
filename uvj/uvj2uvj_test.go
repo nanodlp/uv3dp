@@ -9,7 +9,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/ezrec/uv3dp"
+	"github.com/nanodlp/uv3dp"
 )
 
 const ReferenceUVJ = "reference.uvj"

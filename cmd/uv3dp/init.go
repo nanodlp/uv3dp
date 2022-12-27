@@ -8,7 +8,7 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/ezrec/uv3dp"
+	"github.com/nanodlp/uv3dp"
 )
 
 func init() {

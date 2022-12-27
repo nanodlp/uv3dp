@@ -10,7 +10,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/ezrec/uv3dp"
+	"github.com/nanodlp/uv3dp"
 )
 
 func PrintMachines() {

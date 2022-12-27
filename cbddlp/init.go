@@ -6,7 +6,7 @@
 package cbddlp
 
 import (
-	"github.com/ezrec/uv3dp"
+	"github.com/nanodlp/uv3dp"
 )
 
 var machines_photon = map[string]uv3dp.Machine{

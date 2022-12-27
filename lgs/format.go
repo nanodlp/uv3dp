@@ -12,8 +12,8 @@ import (
 	"image"
 	"io/ioutil"
 
-	"github.com/ezrec/uv3dp"
 	"github.com/go-restruct/restruct"
+	"github.com/nanodlp/uv3dp"
 	"github.com/spf13/pflag"
 )
 

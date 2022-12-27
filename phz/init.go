@@ -6,7 +6,7 @@
 package phz
 
 import (
-	"github.com/ezrec/uv3dp"
+	"github.com/nanodlp/uv3dp"
 )
 
 var (

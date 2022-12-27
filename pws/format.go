@@ -12,7 +12,7 @@ import (
 	"image"
 	"io/ioutil"
 
-	"github.com/ezrec/uv3dp"
+	"github.com/nanodlp/uv3dp"
 	"github.com/spf13/pflag"
 	"golang.org/x/image/draw"
 )

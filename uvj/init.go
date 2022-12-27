@@ -6,7 +6,7 @@
 package uvj
 
 import (
-	"github.com/ezrec/uv3dp"
+	"github.com/nanodlp/uv3dp"
 )
 
 func init() {

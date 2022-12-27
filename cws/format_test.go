@@ -16,7 +16,7 @@ import (
 
 	"testing"
 
-	"github.com/ezrec/uv3dp"
+	"github.com/nanodlp/uv3dp"
 )
 
 type bufferReader struct {
@@ -75,7 +75,7 @@ var (
 )
 
 const (
-	testConfigIni = `; github.com/ezrec/uv3dp uv3dp v0.0.0 64-bits 1-01-01 00:00:00
+	testConfigIni = `; github.com/nanodlp/uv3dp uv3dp v0.0.0 64-bits 1-01-01 00:00:00
 ;(****Build and Slicing Parameters****)
 ;(Pix per mm X            = 2.000 )
 ;(Pix per mm Y            = 2.000 )
