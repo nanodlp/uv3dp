@@ -11,7 +11,6 @@ import (
 	"errors"
 	"fmt"
 	"image"
-	"image/color"
 	"image/png"
 	"io"
 	"io/ioutil"
@@ -321,26 +320,30 @@ func (uvj *UVJ) LayerImage(index int) (layerImage *image.Gray) {
 
 	layerImage, ok := pngImage.(*image.Gray)
 	if !ok {
-		var c color.Color
-		var i int
-		var t map[color.Color]uint8
-		var v uint8
-		var ok bool
+		var i, j int
+		var x int
+		var s []uint8
+		var r, g, b uint32
+		min := pngImage.Bounds().Min.X
+		max := pngImage.Bounds().Max.X
 		layerImage = image.NewGray(pngImage.Bounds())
+		pm := pngImage.(*image.RGBA)
 		for y := pngImage.Bounds().Min.Y; y < pngImage.Bounds().Max.Y; y++ {
-			for x := pngImage.Bounds().Min.X; x < pngImage.Bounds().Max.X; x++ {
-				// Improve layerImage.Set(x, y, pngImage.At(x, y)) performance
-				i = layerImage.PixOffset(x, y)
-				c = pngImage.At(x, y)
-				if v, ok = t[c]; ok {
-					layerImage.Pix[i] = v
-				}
-				v = color.GrayModel.Convert(c).(color.Gray).Y
-				t[c] = v
-				layerImage.Pix[i] = v
+			i = layerImage.PixOffset(pngImage.Bounds().Min.X, y) - 1
+			j = pm.PixOffset(min, y) - 4
+			for x = min; x < max; x++ {
+				i++
+				j += 4
+				s = pm.Pix[j : j+4 : j+4] // Small cap improves performance, see https://golang.org/issue/27857
+				r = uint32(s[0])
+				r |= r << 8
+				g = uint32(s[1])
+				g |= g << 8
+				b = uint32(s[2])
+				b |= b << 8
+				layerImage.Pix[i] = uint8((19595*r + 38470*g + 7471*b + 1<<15) >> 24)
 			}
 		}
 	}
-
 	return
 }
