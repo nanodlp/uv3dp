@@ -1,6 +1,8 @@
 # uv3dp
 Tools for UV Resin based 3D Printers (in Go)
 
+This fork customized to improve NanoDLP export performance.
+
 ## Supported File Formats
 
 This tool is for devices that use sliced image files for UV resin 3D printers.
