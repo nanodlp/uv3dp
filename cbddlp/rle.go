@@ -50,14 +50,15 @@ func rleEncodeBitmap(bm image.Image, level, levels int) (rle []byte, hash uint64
 	// aa 4:  255 191 127 63
 	// aa 8:  255 223 191 159 127 95 63 31
 	threshold := byte((int(256/levels) * level) - 1)
-
-	obit := false
-	rep := 0
+	var x, i, rep int
+	var c uint8
+	var nbit, obit bool
+	im := bm.(*image.Gray)
 	for y := 0; y < size.Y; y++ {
-		for x := 0; x < size.X; x++ {
-			c := bm.At(base.X+x, base.Y+y)
-			ngrey := color.GrayModel.Convert(c).(color.Gray).Y
-			nbit := ngrey >= threshold
+		i = im.PixOffset(base.X, base.Y+y)
+		for x = 0; x < size.X; x++ {
+			c = im.Pix[i+x]
+			nbit = c >= threshold
 			if nbit == obit {
 				rep++
 				if rep == rle8EncodingLimit {
