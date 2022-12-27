@@ -69,12 +69,16 @@ func rleEncodeGraymap(bm image.Image) (rle []byte, hash uint64, bitsOn uint) {
 
 	color := byte(0xff)
 	var stride uint
-
+	var i int
+	var c uint32
+	var grey7 uint8
+	im := bm.(*image.Gray)
 	for y := 0; y < size.Y; y++ {
+		i = im.PixOffset(base.X, base.Y+y)
 		for x := 0; x < size.X; x++ {
-			c := bm.At(base.X+x, base.Y+y)
-			r, g, b, _ := c.RGBA()
-			grey7 := uint8(uint16(r|g|b) >> 9)
+			c = uint32(im.Pix[i+x])
+			c |= c << 8
+			grey7 = uint8(uint16(c) >> 9)
 
 			if grey7 == color {
 				stride++
